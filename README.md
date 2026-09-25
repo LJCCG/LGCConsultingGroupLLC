@@ -1,18 +1,14 @@
-# LJC Consulting Group LLC — Website
+# LJC Consulting Group LLC — Launch-Ready Website
 
-A responsive, single-page corporate consulting website for LJC Consulting Group LLC.
+Included: responsive multi-page corporate site, SEO metadata, robots.txt, sitemap.xml, contact inquiry flow, and no unsupported client/credential claims.
 
-## Files
-- index.html — complete website with embedded CSS and responsive layout.
+Before publishing:
+1. Replace YOUR-PRIMARY-DOMAIN in robots.txt and sitemap.xml.
+2. Add final logo, legal business address, phone, leadership bios, and verified credentials.
+3. Add Privacy Policy and Terms of Use reviewed for actual practices.
+4. For server-side form delivery, connect contact.html to a form/email provider.
+5. Configure HTTPS, DNS, domain redirect, analytics, and Search Console.
 
-## Contact
-The primary contact CTA uses info@LJCCG.com.
 
-## Next steps before launch
-1. Choose the primary domain and redirect the second domain to it.
-2. Add the final logo/brand assets.
-3. Add verified leadership bios, credentials, certifications, office information, and any approved client/project experience.
-4. Connect the contact form to an email/form provider if a web form is desired.
-5. Add Privacy Policy and Terms of Use appropriate to the business.
-6. Set up analytics and search-engine metadata.
-7. Deploy to your preferred hosting provider.
+## Branding
+The supplied LJC Consulting Group logo has been integrated into the header, footer, favicon, and brand assets. The original supplied image is retained as `assets/ljc-logo-source.png`.
