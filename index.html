@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="LJC Consulting Group LLC provides management consulting and advisory services across Risk Management, Finance, Technology, and Operations for private- and public-sector organizations.">
+  <meta name="theme-color" content="#0b1f33">
+  <title>LJC Consulting Group LLC | Management Consulting & Advisory</title>
+  <style>
+    :root{
+      --navy:#0b1f33; --navy2:#102b45; --ink:#172536; --muted:#617080;
+      --line:#dce3e8; --paper:#f6f8fa; --white:#fff; --accent:#b78a4a;
+      --max:1180px; --shadow:0 20px 60px rgba(10,31,51,.12);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--white);line-height:1.65}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(calc(100% - 48px),var(--max));margin:auto}
+    .topbar{background:var(--navy);color:#dfe8ef;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
+    .topbar .container{display:flex;justify-content:space-between;padding:9px 0}
+    header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(220,227,232,.9)}
+    nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .mark{width:42px;height:42px;border:1px solid var(--navy);display:grid;place-items:center;font-weight:800;color:var(--navy);letter-spacing:-.08em}
+    .brand-text{line-height:1.05}
+    .brand-text strong{display:block;font-size:1.02rem;letter-spacing:.12em}
+    .brand-text span{display:block;font-size:.62rem;letter-spacing:.18em;color:var(--muted);margin-top:4px}
+    .links{display:flex;align-items:center;gap:28px;font-size:.88rem;font-weight:600}
+    .links a:hover{color:var(--accent)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 19px;border:1px solid var(--navy);font-weight:700;font-size:.85rem;transition:.2s}
+    .btn.primary{background:var(--navy);color:#fff}
+    .btn.primary:hover{background:var(--navy2);transform:translateY(-1px)}
+    .btn.light{background:#fff;color:var(--navy)}
+    .menu{display:none;background:none;border:0;font-size:1.5rem}
+    .hero{background:linear-gradient(120deg,#071827 0%,#0d2942 62%,#173b59 100%);color:#fff;position:relative;overflow:hidden}
+    .hero:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 78% 30%,rgba(183,138,74,.24),transparent 32%),linear-gradient(90deg,transparent 0 55%,rgba(255,255,255,.03) 55% 55.2%,transparent 55.2% 100%);pointer-events:none}
+    .hero .container{min-height:690px;display:grid;grid-template-columns:1.12fr .88fr;align-items:center;position:relative;z-index:1}
+    .eyebrow{font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:800;margin-bottom:20px}
+    h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.12;margin:0}
+    h1{font-size:clamp(3rem,6vw,5.5rem);letter-spacing:-.045em;max-width:780px}
+    .hero p{font-size:1.15rem;color:#d6e1e9;max-width:690px;margin:28px 0 34px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero .btn.light{border-color:#d9e2e8}
+    .hero-visual{height:500px;position:relative;display:grid;place-items:center}
+    .orb{width:390px;height:390px;border:1px solid rgba(255,255,255,.22);border-radius:50%;position:relative}
+    .orb:before,.orb:after{content:"";position:absolute;border:1px solid rgba(183,138,74,.5);border-radius:50%}
+    .orb:before{inset:48px}.orb:after{inset:105px}
+    .orb .cross{position:absolute;inset:50%;width:1px;height:135%;background:rgba(255,255,255,.12);transform:translate(-50%,-50%) rotate(45deg)}
+    .orb .cross2{transform:translate(-50%,-50%) rotate(-45deg)}
+    .signal{position:absolute;right:0;top:80px;background:#fff;color:var(--navy);padding:18px 20px;box-shadow:var(--shadow);width:220px}
+    .signal small{display:block;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;font-weight:800;font-size:.65rem}
+    .signal strong{display:block;margin-top:7px;font-family:Georgia,serif;font-size:1.25rem}
+    .strip{background:#f1f4f6;border-bottom:1px solid var(--line);border-top:1px solid var(--line)}
+    .strip .container{display:grid;grid-template-columns:repeat(5,1fr);padding:17px 0;gap:10px}
+    .strip span{text-align:center;font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;font-weight:800;color:#52616f}
+    section{padding:105px 0}
+    .intro{display:grid;grid-template-columns:.75fr 1.25fr;gap:80px}
+    .kicker{font-size:.72rem;text-transform:uppercase;letter-spacing:.18em;font-weight:800;color:var(--accent);margin-bottom:16px}
+    h2{font-size:clamp(2.3rem,4vw,3.7rem);letter-spacing:-.035em}
+    .lead{font-size:1.18rem;color:#435364;margin:0 0 18px}
+    .copy{color:var(--muted);font-size:1rem}
+    .services{background:var(--paper)}
+    .section-head{display:flex;justify-content:space-between;gap:50px;align-items:end;margin-bottom:45px}
+    .section-head p{max-width:500px;margin:0;color:var(--muted)}
+    .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .card{background:#fff;border:1px solid var(--line);padding:32px 28px;min-height:330px;transition:.2s}
+    .card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#c9d2d9}
+    .num{font-size:.72rem;letter-spacing:.12em;color:var(--accent);font-weight:800}
+    .card h3{font-size:1.65rem;margin:32px 0 13px}
+    .card p{color:var(--muted);font-size:.94rem}
+    .card ul{padding:0;margin:20px 0 0;list-style:none;color:#40505e;font-size:.82rem}
+    .card li{padding:6px 0;border-top:1px solid #edf0f2}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+    .dark{background:var(--navy);color:#fff}
+    .dark .copy,.dark .lead{color:#c7d3dd}
+    .feature-list{margin-top:30px;border-top:1px solid rgba(255,255,255,.17)}
+    .feature{padding:23px 0;border-bottom:1px solid rgba(255,255,255,.17);display:grid;grid-template-columns:150px 1fr;gap:30px}
+    .feature strong{font-family:Georgia,serif;font-size:1.25rem}
+    .feature span{color:#c7d3dd}
+    .sectors{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:42px}
+    .sector{padding:40px;background:#fff;border:1px solid var(--line)}
+    .sector h3{font-size:2rem;margin-bottom:12px}
+    .approach{background:var(--paper)}
+    .steps{display:grid;grid-template-columns:repeat(5,1fr);margin-top:45px}
+    .step{padding:26px 22px;border-top:2px solid var(--navy);border-right:1px solid var(--line)}
+    .step:last-child{border-right:0}
+    .step b{font-size:.68rem;letter-spacing:.15em;color:var(--accent)}
+    .step h3{font-size:1.3rem;margin:15px 0 8px}
+    .step p{font-size:.84rem;color:var(--muted)}
+    .cta{background:#eef2f4}
+    .cta-box{background:var(--navy);color:#fff;padding:68px;display:flex;justify-content:space-between;align-items:center;gap:40px}
+    .cta-box h2{max-width:650px}
+    footer{background:#071827;color:#b9c7d2;padding:60px 0 28px}
+    .footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:50px;padding-bottom:45px;border-bottom:1px solid rgba(255,255,255,.12)}
+    footer h3{color:#fff;font-size:1.15rem;margin-bottom:15px}
+    footer p,footer a{font-size:.86rem;color:#aebdca}
+    footer a:hover{color:#fff}
+    .footer-links{display:grid;gap:8px}
+    .copyright{display:flex;justify-content:space-between;gap:20px;padding-top:22px;font-size:.72rem;color:#8394a2}
+    @media(max-width:900px){
+      .links{display:none}.menu{display:block}.hero .container{grid-template-columns:1fr;min-height:auto;padding:90px 0}.hero-visual{display:none}
+      .intro,.split{grid-template-columns:1fr;gap:30px}.grid4{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.strip .container{grid-template-columns:1fr 1fr}.strip span:last-child{display:none}
+      .section-head{display:block}.section-head p{margin-top:20px}.footer-top{grid-template-columns:1fr 1fr}.cta-box{display:block;padding:45px}
+    }
+    @media(max-width:560px){
+      .container{width:min(calc(100% - 32px),var(--max))}.topbar{display:none}nav{height:68px}.brand-text strong{font-size:.86rem}
+      h1{font-size:2.75rem}.hero p{font-size:1rem}.grid4,.sectors,.steps,.footer-top{grid-template-columns:1fr}.steps{gap:10px}.step{border-right:0;border-bottom:1px solid var(--line)}
+      section{padding:75px 0}.copyright{display:block}.copyright span{display:block;margin-top:8px}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar"><div class="container"><span>Management Consulting & Advisory Services</span><span>Private & Public Sector</span></div></div>
+  <header>
+    <div class="container">
+      <nav>
+        <a class="brand" href="#home" aria-label="LJC Consulting Group home">
+          <div class="mark">LJ</div>
+          <div class="brand-text"><strong>LJC</strong><span>CONSULTING GROUP LLC</span></div>
+        </a>
+        <div class="links">
+          <a href="#about">About</a><a href="#services">Services</a><a href="#sectors">Sectors</a><a href="#approach">Our Approach</a><a href="#contact">Contact</a>
+          <a class="btn primary" href="#contact">Start a Conversation</a>
+        </div>
+        <button class="menu" aria-label="Open menu" onclick="document.querySelector('.links').classList.toggle('mobile-open')">☰</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container">
+        <div>
+          <div class="eyebrow">Management Consulting & Advisory Services</div>
+          <h1>Strengthening Organizations. Managing Risk. Delivering Results.</h1>
+          <p>LJC Consulting Group LLC provides strategic consulting across Risk Management, Finance, Technology, and Operations—helping private- and public-sector organizations navigate complexity, improve performance, and achieve sustainable results.</p>
+          <div class="hero-actions">
+            <a class="btn light" href="#services">Explore Our Services</a>
+            <a class="btn" style="color:#fff;border-color:#fff" href="#contact">Start a Conversation</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="orb"><div class="cross"></div><div class="cross cross2"></div></div>
+          <div class="signal"><small>Integrated Perspective</small><strong>Risk · Finance · Technology · Operations</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="strip"><div class="container"><span>Private Sector</span><span>Public Sector</span><span>Strategy</span><span>Performance</span><span>Transformation</span></div></div>
+
+    <section id="about">
+      <div class="container intro">
+        <div><div class="kicker">Who We Are</div><h2>Practical Expertise for Complex Challenges.</h2></div>
+        <div>
+          <p class="lead">Organizations today operate amid increasing complexity, evolving risks, financial pressures, technology disruption, regulatory expectations, and demands for greater accountability.</p>
+          <p class="copy">LJC Consulting Group works with leaders to address these challenges with disciplined analysis, practical strategies, and solutions designed for real-world implementation.</p>
+          <p class="copy">Our multidisciplinary approach brings together Risk Management, Finance, Technology, and Operations to help organizations strengthen their foundations while positioning themselves for long-term performance.</p>
+          <a class="btn primary" href="#contact">Learn More About LJC</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="services">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">What We Do</div><h2>Four Disciplines. One Integrated Perspective.</h2></div><p>Our services address the interconnected challenges organizations face across strategy, risk, financial management, technology, and operations.</p></div>
+        <div class="grid4">
+          <article class="card"><span class="num">01 — RISK</span><h3>Risk Management</h3><p>Manage uncertainty, strengthen resilience, and improve governance and controls.</p><ul><li>Enterprise Risk Management</li><li>Risk Assessments</li><li>Governance, Risk & Compliance</li><li>Internal Controls</li><li>Business Continuity & Resilience</li></ul></article>
+          <article class="card"><span class="num">02 — FINANCE</span><h3>Finance</h3><p>Turn financial information into insight that supports informed decisions and performance.</p><ul><li>Financial Management</li><li>Budgeting & Forecasting</li><li>Financial Analysis</li><li>Performance Management</li><li>Management Reporting</li></ul></article>
+          <article class="card"><span class="num">03 — TECHNOLOGY</span><h3>Technology</h3><p>Align technology, data, systems, and digital initiatives with business and mission objectives.</p><ul><li>Technology Strategy</li><li>IT Governance</li><li>Digital Transformation</li><li>Technology Risk</li><li>Data & Reporting</li></ul></article>
+          <article class="card"><span class="num">04 — OPERATIONS</span><h3>Operations</h3><p>Improve how work gets done through stronger processes, capabilities, and accountability.</p><ul><li>Operational Assessments</li><li>Process Improvement</li><li>Organizational Effectiveness</li><li>Program Management</li><li>Change Management</li></ul></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark">
+      <div class="container split">
+        <div><div class="kicker">Why LJC</div><h2>A Clearer View of the Organization.</h2><p class="lead">Many organizational challenges do not exist within a single function.</p><p class="copy">LJC Consulting Group takes an integrated view—connecting the dots across functions to help leadership teams understand challenges, identify opportunities, prioritize action, and move from strategy to execution.</p></div>
+        <div class="feature-list">
+          <div class="feature"><strong>Insight</strong><span>Structured analysis and a disciplined approach to complex organizational challenges.</span></div>
+          <div class="feature"><strong>Practicality</strong><span>Recommendations designed with implementation in mind—not simply to produce another report.</span></div>
+          <div class="feature"><strong>Results</strong><span>A focus on measurable improvements in performance, resilience, efficiency, accountability, and decision-making.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sectors">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Who We Serve</div><h2>Private & Public Sector.</h2></div><p>We support organizations operating in environments where effective management, accountability, risk awareness, and performance matter.</p></div>
+        <div class="sectors">
+          <article class="sector"><div class="kicker">Private Sector</div><h3>Strengthening business performance.</h3><p class="copy">We help businesses strengthen operations, manage risk, improve financial performance, leverage technology, and execute strategic priorities.</p></article>
+          <article class="sector"><div class="kicker">Public Sector</div><h3>Supporting mission and accountability.</h3><p class="copy">We support public-sector organizations navigating complex programs, resource constraints, accountability requirements, technology modernization, and operational challenges.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="approach" class="approach">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Our Approach</div><h2>From Complexity to Clarity. From Strategy to Execution.</h2></div><p>Effective consulting requires understanding the organization, defining the desired outcome, developing a practical path forward, and supporting implementation.</p></div>
+        <div class="steps">
+          <div class="step"><b>01</b><h3>Understand</h3><p>Understand objectives, challenges, stakeholders, and the operating environment.</p></div>
+          <div class="step"><b>02</b><h3>Assess</h3><p>Evaluate current capabilities, processes, risks, resources, and performance.</p></div>
+          <div class="step"><b>03</b><h3>Strategize</h3><p>Translate findings into priorities, recommendations, and an actionable path forward.</p></div>
+          <div class="step"><b>04</b><h3>Implement</h3><p>Move from recommendations to execution through structured implementation and change.</p></div>
+          <div class="step"><b>05</b><h3>Improve</h3><p>Establish measures and feedback mechanisms that support continuous improvement.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="cta">
+      <div class="container"><div class="cta-box"><div><div class="kicker">Let's Start a Conversation</div><h2>Have a complex challenge? Let's discuss it.</h2><p style="color:#c7d3dd;max-width:650px">Whether your organization is managing risk, improving financial performance, modernizing technology, or transforming operations, LJC Consulting Group can help you evaluate the challenge and identify a practical path forward.</p></div><a class="btn light" href="mailto:info@LJCCG.com?subject=Consulting%20Inquiry%20-%20LJC%20Consulting%20Group">Email LJC</a></div></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div><h3>LJC Consulting Group LLC</h3><p>Management consulting and advisory services across Risk Management, Finance, Technology, and Operations.</p><p><a href="mailto:info@LJCCG.com">info@LJCCG.com</a></p></div>
+        <div><h3>Explore</h3><div class="footer-links"><a href="#about">About</a><a href="#services">Services</a><a href="#sectors">Sectors</a><a href="#approach">Our Approach</a></div></div>
+        <div><h3>Connect</h3><div class="footer-links"><a href="#contact">Start a Conversation</a><a href="mailto:info@LJCCG.com">Email LJC</a></div></div>
+      </div>
+      <div class="copyright"><span>© 2026 LJC Consulting Group LLC. All rights reserved.</span><span>Risk Management · Finance · Technology · Operations</span></div>
+    </div>
+  </footer>
+</body>
+</html>
