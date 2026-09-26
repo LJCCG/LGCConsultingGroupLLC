@@ -1,0 +1,15 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ljc-consulting-group",
+  "compatibility_date": "2026-09-26",
+  // Static-assets-only Worker: everything in ./public is served as-is.
+  "assets": {
+    "directory": "./public",
+    // Serves /about.html at /about and redirects the .html form to it.
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  "routes": [
+    { "pattern": "ljcconsultinggroup.com", "custom_domain": true }
+  ]
+}
