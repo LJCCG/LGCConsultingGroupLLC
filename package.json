@@ -1,0 +1,12 @@
+{
+  "name": "ljc-consulting-group-website",
+  "private": true,
+  "description": "Marketing website for LJC Consulting Group LLC, deployed on Cloudflare Workers static assets.",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.141.0"
+  }
+}
