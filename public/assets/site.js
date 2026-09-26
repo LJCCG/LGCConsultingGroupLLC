@@ -2,10 +2,28 @@
 document.querySelectorAll("[data-menu]").forEach((button) =>
   button.addEventListener("click", () => {
     const links = document.querySelector(".navlinks");
-    links.style.display = links.style.display === "flex" ? "none" : "flex";
+    if (!links) return;
+
+    // If the user resizes back to desktop while the menu is open, clear inline overrides.
+    if (!links.dataset.resizeBound) {
+      links.dataset.resizeBound = "true";
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 900) links.removeAttribute("style");
+      });
+    }
+
+    const isOpen = links.style.display === "flex";
+    if (isOpen) {
+      // Remove inline styles so desktop/mobile CSS takes back over cleanly.
+      links.removeAttribute("style");
+      return;
+    }
+
+    const navHeight = document.querySelector("nav")?.offsetHeight ?? 68;
+    links.style.display = "flex";
     links.style.flexDirection = "column";
     links.style.position = "absolute";
-    links.style.top = "68px";
+    links.style.top = `${navHeight}px`;
     links.style.left = "0";
     links.style.right = "0";
     links.style.background = "#fff";
