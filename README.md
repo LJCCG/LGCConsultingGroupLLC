@@ -6,11 +6,12 @@ Static marketing site for LJC Consulting Group LLC, served from **https://ljccon
 
 ```
 public/            Everything that gets deployed
-  *.html           Site pages (index, about, services, sectors, approach, contact, 404)
+  *.html           Site pages (index, about, services, contact, 404)
   assets/          CSS, JS, logo and favicon
   robots.txt       Crawler rules + sitemap pointer
   sitemap.xml
   _headers         Security and cache headers applied by Cloudflare
+  _redirects       301s for retired URLs (/sectors, /approach → /about)
 brand/             Original logo source (kept in the repo, not deployed)
 wrangler.jsonc     Cloudflare Worker config
 ```
