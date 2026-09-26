@@ -1,8 +1,25 @@
 # LJC Consulting Group LLC — Website
 
-Static marketing site for LJC Consulting Group LLC, served from **https://ljcconsultinggroup.com** on Cloudflare Workers (static assets, no server code).
+The marketing website for **LJC Consulting Group LLC**, live at **https://ljcconsultinggroup.com**.
 
-## Layout
+LJC Consulting Group is a multidisciplinary management consulting firm serving private- and public-sector organizations. It works across four connected disciplines (Risk Management, Finance, Technology and Operations) and looks at how a decision in one area affects the whole organization.
+
+## What's on the site
+
+| Page | Content |
+| --- | --- |
+| **Home** (`/`) | Firm positioning, the four disciplines at a glance, and why clients choose LJC |
+| **About** (`/about`) | Who the firm is, the sectors it serves, its five-step approach (Understand → Assess → Strategize → Implement → Improve) and its values |
+| **Services** (`/services`) | Detailed service lines for Risk Management, Finance, Technology and Operations |
+| **Contact** (`/contact`) | Inquiry form and email (`info@LJCCG.com`) |
+
+## How it's built
+
+- **Plain static site:** hand-written HTML with one stylesheet and one small script. No framework and no build step.
+- **Hosted on Cloudflare Workers** as static assets, with no server code. Security and cache headers live in `public/_headers`, and redirects for retired URLs live in `public/_redirects`.
+- **Clean URLs:** pages are served at `/about` rather than `/about.html`.
+
+## Repository layout
 
 ```
 public/            Everything that gets deployed
@@ -11,47 +28,11 @@ public/            Everything that gets deployed
   robots.txt       Crawler rules + sitemap pointer
   sitemap.xml
   _headers         Security and cache headers applied by Cloudflare
-  _redirects       301s for retired URLs (/sectors, /approach → /about)
+  _redirects       301s for retired URLs
 brand/             Original logo source (kept in the repo, not deployed)
 wrangler.jsonc     Cloudflare Worker config
 ```
 
-Internal links use clean URLs (`/about`, not `about.html`). Cloudflare serves `about.html` at `/about` and redirects `/about.html` there. Unknown paths get `404.html`.
+## Setup and deployment
 
-## Local preview
-
-```sh
-npm install
-npm run dev        # http://localhost:8787
-```
-
-Opening the HTML files straight from disk won't work well because links and assets use root-relative paths (`/assets/...`). Use `npm run dev` instead.
-
-## Deploy
-
-**Recommended: Git integration.** In the Cloudflare dashboard go to **Workers & Pages → Create → Import a repository**, then pick `LJCCG/LGCConsultingGroupLLC`. Leave the build command empty and set the deploy command to `npx wrangler deploy`. After that, every push to `main` deploys.
-
-**Manual:** `npx wrangler login`, then `npm run deploy`.
-
-## Domains
-
-| Domain | Purpose |
-| --- | --- |
-| `ljcconsultinggroup.com` | Primary website (Worker custom domain, set in `wrangler.jsonc`) |
-| `ljccg.com` | Email (`info@LJCCG.com`). Web visits redirect to the primary domain |
-
-One-time setup in Cloudflare (both zones must be added to the account):
-
-1. **Custom domain.** The first deploy attaches `ljcconsultinggroup.com` to the Worker and creates its DNS record. Remove any existing apex A/AAAA/CNAME record that conflicts with it first.
-2. **Redirects.** Send `www.ljcconsultinggroup.com`, `ljccg.com` and `www.ljccg.com` to the primary domain:
-   - Make sure each hostname has a **proxied** (orange-cloud) DNS record. If none exists, add `AAAA <name> 100::` (proxied).
-   - In each zone, go to **Rules → Redirect Rules** and create a dynamic redirect: match on the hostname, target `concat("https://ljcconsultinggroup.com", http.request.uri.path)`, status **301**, preserve query string.
-3. **Keep email working.** Do **not** change or delete the MX, SPF (TXT), DKIM or DMARC records on `ljccg.com`. The redirect only affects web (HTTP) traffic.
-4. In the SSL/TLS settings for both zones, set the mode to **Full** and turn on **Always Use HTTPS**.
-
-## Before launch (content)
-
-- Add the legal business address, phone number, leadership bios and verified credentials.
-- Add a Privacy Policy and Terms of Use that reflect actual practices.
-- The contact form currently opens the visitor's email app (`mailto:`). For server-side delivery, connect it to a form or email provider.
-- Set up analytics (e.g. Cloudflare Web Analytics) and submit `sitemap.xml` in Google Search Console.
+See **[SETUP.md](SETUP.md)** for local preview, deployment, domain and DNS configuration, and the pre-launch checklist.
