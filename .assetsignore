@@ -1,0 +1,9 @@
+.git
+.wrangler
+node_modules
+README.md
+SETUP.md
+wrangler.jsonc
+.assetsignore
+.gitignore
+ljc-logo-source.png

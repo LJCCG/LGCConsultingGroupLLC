@@ -36,3 +36,8 @@ wrangler.jsonc     Cloudflare Worker config
 ## Setup and deployment
 
 See **[SETUP.md](SETUP.md)** for local preview, deployment, domain and DNS configuration, and the pre-launch checklist.
+## Branding
+The supplied LJC Consulting Group logo has been integrated into the header, footer, favicon, and brand assets. The original supplied image is retained as `assets/ljc-logo-source.png`.
+
+## Deployment
+See [SETUP.md](SETUP.md) for step-by-step instructions to host the site on Cloudflare Workers with the GoDaddy-registered domains.
